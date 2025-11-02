@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/github-actions.ts",
+  "app": "npx ts-node --prefer-ts-exts bin/s3-bucket-app.ts",
   "watch": {
     "include": [
       "**"
