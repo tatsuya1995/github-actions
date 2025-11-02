@@ -67,5 +67,8 @@ jobs:
         role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
         aws-region: ap-northeast-1
 
+    - name: CDK Bootstrap
+      run: npx cdk bootstrap --force
+
     - name: CDK Deploy
       run: npx cdk deploy --require-approval never
