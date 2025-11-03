@@ -11,7 +11,7 @@ export class S3BucketStack extends cdk.Stack {
       bucketName: 's3-bucket-' + Math.random().toString(36).substring(2, 15),
       versioned: true,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
-      autoDeleteObjects: true,
+      // autoDeleteObjects: true, // Bootstrap不要にするため一時的にコメントアウト
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
     });
   }
