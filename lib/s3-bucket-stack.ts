@@ -14,5 +14,13 @@ export class S3BucketStack extends cdk.Stack {
       // autoDeleteObjects: true, // Bootstrap不要にするため一時的にコメントアウト
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
     });
+
+    // 2つ目のS3バケットを追加
+    const secondBucket = new s3.Bucket(this, 'MySecondS3Bucket', {
+      bucketName: 's3-bucket-second-' + Math.random().toString(36).substring(2, 15),
+      versioned: true,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
+    });
   }
 }
